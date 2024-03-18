@@ -1,31 +1,16 @@
 <!DOCTYPE html>
-<html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fetch and Execute Python Code</title>
-    <!-- Import Pyodide library -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.18.1/full/pyodide.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Yoshispeak</title>
 </head>
 <body>
-    <h1>Fetch and Execute Python Code in Browser</h1>
-    <button onclick="fetchAndExecutePython()">Fetch and Execute Python</button><br>
-    <div id="output"></div>
-
-    <script type="text/javascript">
-        async function fetchAndExecutePython() {
-            // Fetch the Python code from the server (GitHub Pages)
-            const response = await fetch('https://yoshigamer360.github.io/yoshispeakcode/python_code.py');
-            const pythonCode = await response.text();
-
-            // Initialize Pyodide
-            await loadPyodide({ indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.18.1/full/' });
-
-            // Execute the Python code
-            const output = await pyodide.runPythonAsync(pythonCode);
-
-            // Display the output
-            document.getElementById('output').innerText = output;
-        }
-    </script>
+    <!-- Your HTML content here -->
+    <div id="shade2">
+		    <h1 class="white-text">
+		    	Yoshispeak
+		    </h1>
+            <!-- Include your script file -->
+        <script src="yoshispeakcode.js"></script>
+    </div>
 </body>
 </html>
