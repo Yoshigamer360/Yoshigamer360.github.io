@@ -12,9 +12,9 @@
     <script type="text/javascript">
         async function runPythonCode() {
             // Initialize Pyodide
-            await loadPyodide({ indexURL : "https://cdn.jsdelivr.net/pyodide/v0.18.1/full/" });
+            await languagePluginLoader;
             
-            // Fetch Python script content (christmas.py)
+            // Fetch Python script content
             const response = await fetch('christmasTree.py');
             const pythonCode = await response.text();
             
