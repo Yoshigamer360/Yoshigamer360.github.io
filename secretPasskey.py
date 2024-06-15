@@ -26,7 +26,7 @@ adverbs = ['carefully', 'fast', 'loudly', 'quickly', 'quietly', 'rapidly', 'slow
 prepositions = ['above', 'across', 'behind', 'beside', 'near', 'next to', 'off', 'on', 'over', 'under', ] 
 # 'beyond', 'inside', 'through', 'below', 'in', 'into', 'down', 'up', 'onto', 'out', 
 
-numberOfPhrases = int(input('How many passcodes would you like to receive? '))
+numberOfPhrases = int(input())
 if numberOfPhrases > 100:
   numberOfPhrases = 100
 for i in range(numberOfPhrases):
