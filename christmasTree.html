@@ -5,9 +5,19 @@
 	<title>Pyscript demo</title>
 	<link rel="stylesheet" href ="https://pyscript.net/alpha/pyscript.css" />
 	<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.9.12/brython.min.js"></script>
 </head>
 
-<body>
+<body>	
+	<canvas id="turtleCanvas"></canvas>
+	
+	<!-- Include Brython initialization script -->
+	<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function () {
+	brython();
+	});
+	</script>
+	
 	<py-script src="christmasTree.py">
 	</py-script>
 </body>
