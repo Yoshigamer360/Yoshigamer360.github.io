@@ -1,27 +1,29 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<title>Pyscript demo</title>
-	<link rel="stylesheet" href ="https://pyscript.net/alpha/pyscript.css" />
-	<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.9.12/brython.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Turtle in Browser</title>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.18.1/full/pyodide.js"></script>
 </head>
-
-<body>	
-	<canvas id="turtleCanvas"></canvas>
-	
-	<!-- Include Brython initialization script -->
-	<script type="text/javascript">
-	document.addEventListener('DOMContentLoaded', function () {
-	brython();
-	});
-	</script>
-	
-	<py-script src="christmasTree.py">
-	</py-script>
+<body>
+    <canvas id="turtleCanvas" width="400" height="400"></canvas>
+    <script type="text/javascript">
+        async function runPythonCode() {
+            // Initialize Pyodide
+            await loadPyodide({ indexURL : "https://cdn.jsdelivr.net/pyodide/v0.18.1/full/" });
+            
+            // Fetch Python script content (christmas.py)
+            const response = await fetch('christmasTree.py');
+            const pythonCode = await response.text();
+            
+            // Run the Python code
+            pyodide.runPython(pythonCode);
+        }
+        
+        // Run the Python code when the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', runPythonCode);
+    </script>
 </body>
-
 </html>
-
-<!-- python -m http.server 3000 -->
