@@ -42,16 +42,7 @@ for i in range(numberOfPhrases):
   noun1Chosen = random.choice(nouns)
   
   # Pronoun1
-  #decidingNumber = random.randint(1, 2)
-  #if decidingNumber == 1:
   pronoun1Chosen = 'the'
-  #else:
-  #  if adjective1Chosen[0] == 'a' or adjective1Chosen[0] == 'e' or \
-  #  adjective1Chosen[0] == 'i' or adjective1Chosen[0] == 'o' or \
-  #  adjective1Chosen[0] == 'u':
-  #    pronoun1Chosen = 'an'
-  #  else:
-  #    pronoun1Chosen = 'a'
   
   # Noun2
   noun2Chosen = random.choice(nouns)
